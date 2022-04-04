@@ -15,14 +15,14 @@ contours, _ = cv2.findContours(
     threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
 
-# list for storing names of shapes
+
 for contour in contours:
 
     # cv2.approxPloyDP() function to approximate the shape
     approx = cv2.approxPolyDP(
         contour, 0.0175 * cv2.arcLength(contour, True), True)
 
-    # putting shape name at center of each shape
+
     if len(approx) == 3:
         cv2.drawContours(img, [contour], 0, (0, 255, 0), -1)
 
